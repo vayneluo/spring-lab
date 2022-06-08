@@ -10,7 +10,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class ProjectVO {
+public class ProjectCompanyVO {
 
     private Long id;
 

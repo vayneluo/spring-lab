@@ -1,9 +1,13 @@
 package me.lattice.spring.lab.mapstruct.mapper;
 
 import lombok.extern.slf4j.Slf4j;
+import me.lattice.spring.lab.mapstruct.dto.ProjectCompanyVO;
 import me.lattice.spring.lab.mapstruct.dto.ProjectVO;
+import me.lattice.spring.lab.mapstruct.entity.Company;
 import me.lattice.spring.lab.mapstruct.entity.Project;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -22,7 +26,16 @@ public interface ProjectConvertMapper {
      * @author: Vayne.Luo
      * @date: 2022/6/6 14:34
      */
+    @Mappings({
+            @Mapping(source = "projectName", target = "projectNameVO")
+    })
     ProjectVO convertProjectVO(Project project);
+
+    @Mappings({
+            @Mapping(source = "project.projectName", target = "projectNameVO"),
+            @Mapping(source = "company.companyName", target = "companyName")
+    })
+    ProjectCompanyVO convertProjectCompanyVO(Project project, Company company);
 
 
 }
