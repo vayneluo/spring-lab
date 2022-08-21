@@ -16,6 +16,8 @@
 
     <modules>
         <module>spring-boot-lab</module>
+        <module>spring-batch-lab</module>
+        <module>spring-rocketmq-lab</module>
     </modules>
 
     <dependencyManagement>
